@@ -31,6 +31,6 @@
   "author": "boscan-alexandru",
   "license": "",
   "engines": {
-    "node": "^21.7"
+    "node": "^22.1.0"
   }
 }
