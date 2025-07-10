@@ -1,0 +1,23 @@
+<div id="stories-app">
+  <div class="story-grid">
+    <template v-for="story in stories" :key="story.id">
+      <story-card :story="story"></story-card>
+    </template>
+  </div>
+
+  <div class="load-more-container">
+    <button
+      v-if="hasMore"
+      @click="loadMoreStories"
+      :disabled="isLoading"
+      class="load-more-button"
+    >
+      {{ isLoading ? "Loading..." : "Load More" }}
+    </button>
+    <p v-else>No more stories to load.</p>
+  </div>
+</div>
+<script>
+  window.initialStories = <%- JSON.stringify(stories) %>;
+  window.hasMoreInitial = <%- JSON.stringify(stories.length > 10) %>;
+</script>

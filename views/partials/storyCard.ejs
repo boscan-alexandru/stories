@@ -1,0 +1,25 @@
+<div class="story-card">
+  <% if (story.preview) { %>
+  <img
+    src="<%= story.preview %>"
+    alt="<%= story.title %> preview"
+    loading="lazy"
+  />
+  <% } %>
+  <div class="story-card-content">
+    <h3><%= story.title %></h3>
+    <p>Published: <%= story.publish_date %></p>
+    <% if (story.author) { %>
+    <div class="author-info">
+      <% if (story.author.avatar) { %>
+      <img
+        src="<%= story.author.avatar %>"
+        alt="<%= story.author.username %> avatar"
+        class="author-avatar"
+      />
+      <% } %>
+      <span>By <%= story.author.username %></span>
+    </div>
+    <% } %>
+  </div>
+</div>
